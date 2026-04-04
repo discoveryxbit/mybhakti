@@ -2,16 +2,10 @@
 
 import { motion } from "framer-motion";
 import { Sparkles, ArrowDown, BookOpen, Send } from "lucide-react";
+import Link from "next/link";
+import Navigation from "@/components/layout/Navigation";
 import ComplianceSection from "@/components/legal/ComplianceSection";
 import Image from "next/image";
-
-const FEATURED_ASSETS = [
-  { src: "/1.jpg", alt: "Bhakti Comic Preview 1", size: "lg" },
-  { src: "/2.jpg", alt: "Bhakti Comic Preview 2", size: "sm" },
-  { src: "/3.png", alt: "Bhakti Comic Preview 3", size: "sm" },
-  { src: "/4.jpg", alt: "Bhakti Comic Preview 4", size: "md" },
-  { src: "/5.jpg", alt: "Bhakti Comic Preview 5", size: "lg" },
-];
 
 export default function Home() {
   const containerVariants = {
@@ -45,20 +39,7 @@ export default function Home() {
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-saffron/5 rounded-full blur-[160px] pointer-events-none" />
 
       {/* Navigation Header */}
-      <nav className="fixed top-0 w-full z-50 glass-nav px-8 py-6 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <BookOpen size={20} className="text-saffron" />
-          <span className="font-bold text-earth text-lg tracking-tighter uppercase">Bhakti Comics</span>
-        </div>
-        <div className="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-earth/50">
-          <a href="#vision" className="hover:text-saffron transition-colors">Our Vision</a>
-          <a href="#previews" className="hover:text-saffron transition-colors">Previews</a>
-          <a href="#legal" className="hover:text-saffron transition-colors">Legal & Terms</a>
-        </div>
-        <button className="bg-earth text-surface px-6 py-2.5 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-xl shadow-earth/10">
-          Stay Updated
-        </button>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
       <section className="relative pt-48 pb-32 px-6 flex flex-col items-center justify-center text-center">
@@ -121,61 +102,65 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Image Showcase Gallery */}
+      {/* Image Showcase Gallery (4 Core Products) */}
       <section id="previews" className="py-32 px-6 bg-[#FDFBF7] relative">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-12 mb-20 text-center md:text-left">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif">
-              The <span className="italic">Bhakti Panels.</span>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif underline decoration-saffron/20 underline-offset-8">
+              The <span className="italic">Principal Collections.</span>
             </h2>
             <div className="w-24 h-1 bg-saffron/30" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="columns-1 md:columns-2 gap-8 space-y-8">
             {[
-              { src: "/1.jpg", title: "THE SACRED FOREST", tag: "PANEL 01" },
-              { src: "/2.jpg", title: "THE DIVINE FLUTE", tag: "PANEL 02" },
-              { src: "/3.png", title: "ETERNAL WISDOM", tag: "PANEL 03" },
-              { src: "/4.jpg", title: "THE AWAKENING", tag: "PANEL 04" },
-              { src: "/5.jpg", title: "DIVINE GATHERING", tag: "PANEL 05" },
-            ].map((asset, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="group relative"
+              { id: "krishna", src: "/krishna/3.png", title: "Krishna Leela", slug: "krishna-leela", desc: "The divine play of the Supreme." },
+              { id: "geeta", src: "/geeta/1.jpg", title: "Geeta Updesh", slug: "geeta-updesh", desc: "Eternal wisdom for the battlefield of life." },
+              { id: "mahabharata", src: "/mahabharata/1.png", title: "Mahabharat Comics", slug: "mahabharat-comics", desc: "The greatest epic ever told." },
+              { id: "ramayan", src: "/ramayan/2.png", title: "Ramayan Comics", slug: "ramayan-comics", desc: "The journey of the Ideal King." },
+            ].map((product, index) => (
+              <Link
+                key={product.id}
+                href={`/products/${product.slug}`}
+                className="group block break-inside-avoid"
               >
-                {/* Comic Panel Container */}
-                <div className="sacred-card relative overflow-hidden bg-earth/[0.02] border border-earth/5">
-                  <div className="aspect-[3/4] relative w-full overflow-hidden">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="sacred-card relative overflow-hidden bg-earth/[0.02] border border-earth/5 transition-all duration-700"
+                >
+                  <div className="relative w-full overflow-hidden">
                     <img 
-                      src={asset.src} 
-                      alt={asset.title}
-                      className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                      src={product.src} 
+                      alt={product.title}
+                      className="w-full h-auto object-contain transition-all duration-1000 group-hover:scale-105"
                     />
                     
-                    {/* Comic Wording / Overlays */}
-                    <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/90 via-earth/40 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="px-2 py-0.5 bg-saffron text-surface text-[8px] font-bold tracking-[0.2em] uppercase rounded-sm">
-                          {asset.tag}
-                        </span>
+                    {/* Comic Wording Overlay */}
+                    <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/90 via-earth/40 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <h4 className="text-xl md:text-2xl font-bold text-white tracking-widest uppercase font-serif">
+                            {product.title}
+                          </h4>
+                          <p className="text-[9px] md:text-[10px] text-white/60 font-bold uppercase tracking-[0.3em] mt-2">
+                             Full Digital Series • Coming Soon
+                          </p>
+                        </div>
+                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-white group-hover:text-earth transition-all duration-500">
+                            <BookOpen size={18} />
+                        </div>
                       </div>
-                      <h4 className="text-lg font-bold text-white tracking-widest uppercase font-serif">
-                        {asset.title}
-                      </h4>
-                      <p className="text-[9px] text-white/50 font-bold uppercase tracking-[0.2em] mt-1">
-                        Comic-Bhakti Edition
-                      </p>
                     </div>
                   </div>
+                </motion.div>
+                <div className="mt-4 flex justify-between items-center px-1">
+                   <p className="text-earth/40 text-[10px] font-bold uppercase tracking-[0.2em]">{product.desc}</p>
+                   <span className="text-saffron text-[9px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-1 transition-transform duration-500">Explore →</span>
                 </div>
-
-                {/* Decorative Comic Shadow */}
-                <div className="absolute -bottom-2 -right-2 w-full h-full border-r border-b border-earth/5 -z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
-              </motion.div>
+              </Link>
             ))}
           </div>
         </div>
