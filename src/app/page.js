@@ -102,12 +102,12 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Image Showcase Gallery (The Bhakti Panels) */}
+      {/* Image Showcase Gallery (The Bhakti Series) */}
       <section id="previews" className="py-32 px-6 bg-[#FDFBF7] relative">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-12 mb-20 text-center md:text-left">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif">
-              The <span className="italic font-normal text-saffron">Bhakti Panels.</span>
+              The <span className="italic font-normal text-saffron">Bhakti Collections.</span>
             </h2>
             <div className="w-24 h-px bg-saffron/30" />
           </div>
@@ -139,7 +139,7 @@ export default function Home() {
                         className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                       />
                       
-                      {/* Comic Panels Wording / Overlays */}
+                      {/* Comic Illustrations Wording / Overlays */}
                       <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/90 via-earth/40 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
                         <h4 className="text-lg font-bold text-white tracking-widest uppercase font-serif">
                           {product.title}

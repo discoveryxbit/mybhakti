@@ -11,7 +11,7 @@ const PRODUCT_DETAILS = {
   "krishna-leela": {
     title: "Krishna Leela",
     tagline: "The Divine Play of the Supreme",
-    description: "A high-fidelity journey through the mystic pastimes of Sri Krishna. Hand-illustrated panels capturing the essence of Vraja.",
+    description: "A high-fidelity journey through the mystic pastimes of Sri Krishna. Hand-illustrated pieces capturing the essence of Vraja.",
     image: "/krishna/3.png",
     gallery: ["/krishna/1.jpg", "/krishna/2.jpg", "/krishna/3.png", "/krishna/4.jpg", "/krishna/5.jpg"]
   },
@@ -116,7 +116,7 @@ export default function ProductPage() {
                <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Comprehensive Gallery</span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif">
-              The <span className="italic font-normal text-saffron tracking-tight">Series Panels.</span>
+              The <span className="italic font-normal text-saffron tracking-tight">Collection Pieces.</span>
             </h2>
             <div className="w-24 h-px bg-saffron/30" />
           </div>
@@ -135,16 +135,13 @@ export default function ProductPage() {
                   <div className="sacred-card relative aspect-[3/4] overflow-hidden bg-earth/[0.02] border border-earth/5 transition-all duration-700">
                     <img 
                       src={imgSrc} 
-                      alt={`${product.title} Panel ${imgIndex + 1}`}
+                      alt={`${product.title} Illustration ${imgIndex + 1}`}
                       className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                     />
                     
-                    {/* Panel IDchip-less Narrative Overlay */}
+                    {/* Narrative Overlay */}
                     <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/95 via-earth/40 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-700">
-                      <h4 className="text-xl font-bold text-white tracking-widest uppercase font-serif">
-                        Panel {String(imgIndex + 1).padStart(2, '0')}
-                      </h4>
-                      <p className="text-[9px] text-white/50 font-bold uppercase tracking-[0.2em] mt-2 italic">
+                      <p className="text-[9px] text-white/50 font-bold uppercase tracking-[0.2em] italic">
                         Sacred Art • High Fidelity
                       </p>
                     </div>
