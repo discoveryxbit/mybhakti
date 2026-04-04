@@ -23,30 +23,7 @@ export default function Navigation() {
       </Link>
       
       <div className="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-earth/50">
-        <div 
-          className="relative group cursor-pointer"
-          onMouseEnter={() => setIsProductsOpen(true)}
-          onMouseLeave={() => setIsProductsOpen(false)}
-        >
-          <Link href="/products" className="hover:text-saffron transition-colors">Products</Link>
-          {isProductsOpen && (
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="absolute top-full left-0 mt-4 py-4 bg-surface border border-earth/5 rounded-2xl shadow-xl min-w-[200px]"
-            >
-              {PRODUCTS.map((product) => (
-                <Link 
-                  key={product.slug}
-                  href={`/products/${product.slug}`}
-                  className="block px-6 py-2.5 hover:bg-saffron/5 hover:text-saffron transition-colors normal-case tracking-normal text-sm"
-                >
-                  {product.name}
-                </Link>
-              ))}
-            </motion.div>
-          )}
-        </div>
+        <Link href="/products" className="hover:text-saffron transition-colors">Products</Link>
         <a href="/#vision" className="hover:text-saffron transition-colors">Our Vision</a>
         <a href="/#legal" className="hover:text-saffron transition-colors">Legal & Terms</a>
       </div>

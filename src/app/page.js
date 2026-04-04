@@ -102,63 +102,65 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Image Showcase Gallery (4 Core Products) */}
+      {/* Image Showcase Gallery (The Bhakti Panels) */}
       <section id="previews" className="py-32 px-6 bg-[#FDFBF7] relative">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-12 mb-20 text-center md:text-left">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif underline decoration-saffron/20 underline-offset-8">
-              The <span className="italic">Principal Collections.</span>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif">
+              The <span className="italic font-normal text-saffron">Bhakti Panels.</span>
             </h2>
-            <div className="w-24 h-1 bg-saffron/30" />
+            <div className="w-24 h-px bg-saffron/30" />
           </div>
 
-          <div className="columns-1 md:columns-2 gap-8 space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { id: "krishna", src: "/krishna/3.png", title: "Krishna Leela", slug: "krishna-leela", desc: "The divine play of the Supreme." },
-              { id: "geeta", src: "/geeta/1.jpg", title: "Geeta Updesh", slug: "geeta-updesh", desc: "Eternal wisdom for the battlefield of life." },
-              { id: "mahabharata", src: "/mahabharata/1.png", title: "Mahabharat Comics", slug: "mahabharat-comics", desc: "The greatest epic ever told." },
-              { id: "ramayan", src: "/ramayan/2.png", title: "Ramayan Comics", slug: "ramayan-comics", desc: "The journey of the Ideal King." },
+              { id: "krishna", src: "/krishna/3.png", title: "Krishna Leela", slug: "krishna-leela", desc: "The divine play of the Supreme.", tag: "PANEL 01" },
+              { id: "geeta", src: "/geeta/1.jpg", title: "Geeta Updesh", slug: "geeta-updesh", desc: "Eternal wisdom for the life battlefield.", tag: "PANEL 02" },
+              { id: "mahabharata", src: "/mahabharata/1.png", title: "Mahabharat Comics", slug: "mahabharat-comics", desc: "The greatest epic ever told.", tag: "PANEL 03" },
+              { id: "ramayan", src: "/ramayan/2.png", title: "Ramayan Comics", slug: "ramayan-comics", desc: "The journey of the Ideal King.", tag: "PANEL 04" },
             ].map((product, index) => (
               <Link
                 key={product.id}
                 href={`/products/${product.slug}`}
-                className="group block break-inside-avoid"
+                className="group block"
               >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.98 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="sacred-card relative overflow-hidden bg-earth/[0.02] border border-earth/5 transition-all duration-700"
-                >
-                  <div className="relative w-full overflow-hidden">
-                    <img 
-                      src={product.src} 
-                      alt={product.title}
-                      className="w-full h-auto object-contain transition-all duration-1000 group-hover:scale-105"
-                    />
-                    
-                    {/* Comic Wording Overlay */}
-                    <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/90 via-earth/40 to-transparent translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <h4 className="text-xl md:text-2xl font-bold text-white tracking-widest uppercase font-serif">
-                            {product.title}
-                          </h4>
-                          <p className="text-[9px] md:text-[10px] text-white/60 font-bold uppercase tracking-[0.3em] mt-2">
-                             Full Digital Series • Coming Soon
-                          </p>
+                <div className="relative">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    className="sacred-card relative overflow-hidden bg-earth/[0.02] border border-earth/5 transition-all duration-700"
+                  >
+                    <div className="aspect-[3/4] relative w-full overflow-hidden">
+                      <img 
+                        src={product.src} 
+                        alt={product.title}
+                        className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                      />
+                      
+                      {/* Comic Panels Wording / Overlays */}
+                      <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/90 via-earth/40 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="px-2 py-0.5 bg-saffron text-surface text-[8px] font-bold tracking-[0.2em] uppercase rounded-sm">
+                            {product.tag}
+                          </span>
                         </div>
-                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-white group-hover:text-earth transition-all duration-500">
-                            <BookOpen size={18} />
-                        </div>
+                        <h4 className="text-lg font-bold text-white tracking-widest uppercase font-serif">
+                          {product.title}
+                        </h4>
+                        <p className="text-[9px] text-white/50 font-bold uppercase tracking-[0.2em] mt-1">
+                          Comic-Bhakti Edition
+                        </p>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
-                <div className="mt-4 flex justify-between items-center px-1">
-                   <p className="text-earth/40 text-[10px] font-bold uppercase tracking-[0.2em]">{product.desc}</p>
-                   <span className="text-saffron text-[9px] font-bold uppercase tracking-[0.2em] group-hover:translate-x-1 transition-transform duration-500">Explore →</span>
+                  </motion.div>
+                  {/* Decorative Comic Shadow */}
+                  <div className="absolute -bottom-2 -right-2 w-full h-full border-r border-b border-earth/10 -z-10 group-hover:translate-x-1 group-hover:translate-y-1 transition-transform" />
+                </div>
+                <div className="mt-8 px-1 flex justify-between items-center opacity-40 group-hover:opacity-100 transition-opacity">
+                   <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-earth">{product.desc}</p>
+                   <span className="text-[9px] font-bold uppercase tracking-widest text-saffron">Explore →</span>
                 </div>
               </Link>
             ))}
