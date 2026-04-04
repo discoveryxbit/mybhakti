@@ -114,10 +114,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { id: "krishna", src: "/krishna/3.png", title: "Krishna Leela", slug: "krishna-leela", desc: "The divine play of the Supreme.", tag: "PANEL 01" },
-              { id: "geeta", src: "/geeta/1.jpg", title: "Geeta Updesh", slug: "geeta-updesh", desc: "Eternal wisdom for the life battlefield.", tag: "PANEL 02" },
-              { id: "mahabharata", src: "/mahabharata/1.png", title: "Mahabharat Comics", slug: "mahabharat-comics", desc: "The greatest epic ever told.", tag: "PANEL 03" },
-              { id: "ramayan", src: "/ramayan/2.png", title: "Ramayan Comics", slug: "ramayan-comics", desc: "The journey of the Ideal King.", tag: "PANEL 04" },
+              { id: "krishna", src: "/krishna/3.png", title: "Krishna Leela", slug: "krishna-leela", desc: "The divine play of the Supreme." },
+              { id: "geeta", src: "/geeta/1.jpg", title: "Geeta Updesh", slug: "geeta-updesh", desc: "Eternal wisdom for the life battlefield." },
+              { id: "mahabharata", src: "/mahabharata/1.png", title: "Mahabharat Comics", slug: "mahabharat-comics", desc: "The greatest epic ever told." },
+              { id: "ramayan", src: "/ramayan/2.png", title: "Ramayan Comics", slug: "ramayan-comics", desc: "The journey of the Ideal King." },
             ].map((product, index) => (
               <Link
                 key={product.id}
@@ -141,11 +141,6 @@ export default function Home() {
                       
                       {/* Comic Panels Wording / Overlays */}
                       <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/90 via-earth/40 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="px-2 py-0.5 bg-saffron text-surface text-[8px] font-bold tracking-[0.2em] uppercase rounded-sm">
-                            {product.tag}
-                          </span>
-                        </div>
                         <h4 className="text-lg font-bold text-white tracking-widest uppercase font-serif">
                           {product.title}
                         </h4>

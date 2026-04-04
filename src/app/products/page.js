@@ -7,10 +7,10 @@ import Navigation from "@/components/layout/Navigation";
 import ComplianceSection from "@/components/legal/ComplianceSection";
 
 const PRODUCT_LIST = [
-  { id: "krishna", src: "/krishna/3.png", title: "Krishna Leela", slug: "krishna-leela", tag: "PANEL 01", desc: "A high-fidelity journey through the mystic pastimes of Sri Krishna. Hand-illustrated panels capturing the essence of Vraja." },
-  { id: "geeta", src: "/geeta/1.jpg", title: "Geeta Updesh", slug: "geeta-updesh", tag: "PANEL 02", desc: "The timeless conversation between Krishna and Arjuna, rendered in stunning digital art to bring the song of god to life." },
-  { id: "mahabharata", src: "/mahabharata/1.png", title: "Mahabharat Comics", slug: "mahabharat-comics", tag: "PANEL 03", desc: "A monumental saga of righteousness, duty, and the ultimate sacrifice. Witness the Kurukshetra war in unprecedented detail." },
-  { id: "ramayan", src: "/ramayan/2.png", title: "Ramayan Comics", slug: "ramayan-comics", tag: "PANEL 04", desc: "The heroic tale of Maryada Purushottam Ram. A story of love, honor, and the victory of light over darkness." },
+  { id: "krishna", src: "/krishna/3.png", title: "Krishna Leela", slug: "krishna-leela", desc: "A high-fidelity journey through the mystic pastimes of Sri Krishna. Hand-illustrated panels capturing the essence of Vraja." },
+  { id: "geeta", src: "/geeta/1.jpg", title: "Geeta Updesh", slug: "geeta-updesh", desc: "The timeless conversation between Krishna and Arjuna, rendered in stunning digital art to bring the song of god to life." },
+  { id: "mahabharata", src: "/mahabharata/1.png", title: "Mahabharat Comics", slug: "mahabharat-comics", desc: "A monumental saga of righteousness, duty, and the ultimate sacrifice. Witness the Kurukshetra war in unprecedented detail." },
+  { id: "ramayan", src: "/ramayan/2.png", title: "Ramayan Comics", slug: "ramayan-comics", desc: "The heroic tale of Maryada Purushottam Ram. A story of love, honor, and the victory of light over darkness." },
 ];
 
 export default function ProductsIndex() {
@@ -60,11 +60,6 @@ export default function ProductsIndex() {
                     
                     {/* Comic Panels Wording / Overlays */}
                     <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-earth/90 via-earth/40 to-transparent translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="px-2 py-0.5 bg-saffron text-surface text-[8px] font-bold tracking-[0.2em] uppercase rounded-sm">
-                          {product.tag}
-                        </span>
-                      </div>
                       <h4 className="text-lg font-bold text-white tracking-widest uppercase font-serif">
                         {product.title}
                       </h4>
