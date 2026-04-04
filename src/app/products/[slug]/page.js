@@ -118,7 +118,7 @@ export default function ProductPage() {
             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif">
               The <span className="italic font-normal text-saffron tracking-tight">Collection Pieces.</span>
             </h2>
-            <div className="w-24 h-px bg-saffron/30" />
+            <div className="w-24 h-px bg-saffron/30 mx-auto md:mx-0" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
