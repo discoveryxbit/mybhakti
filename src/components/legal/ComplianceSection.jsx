@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, ShieldCheck, RefreshCcw, FileText, MapPin } from "lucide-react";
+import Link from "next/link";
 
 const policies = [
   {
@@ -77,8 +78,8 @@ export default function ComplianceSection() {
             © {new Date().getFullYear()} Bhakti Comics. Dedicated to the Divine.
           </p>
           <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-foreground/40">
-            <a href="#" className="hover:text-saffron transition-colors">Digital Distribution Terms</a>
-            <a href="#" className="hover:text-saffron transition-colors">Privacy Principles</a>
+            <Link href="/legal/distribution" className="hover:text-saffron transition-colors">Digital Distribution Terms</Link>
+            <Link href="/legal/privacy" className="hover:text-saffron transition-colors">Privacy Principles</Link>
           </div>
         </div>
       </div>

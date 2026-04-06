@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Sparkles, ArrowDown, BookOpen, Send } from "lucide-react";
 import Link from "next/link";
 import Navigation from "@/components/layout/Navigation";
+import Vision from "@/components/sections/Vision";
 import ComplianceSection from "@/components/legal/ComplianceSection";
 import Image from "next/image";
 
@@ -54,22 +55,22 @@ export default function Home() {
             className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-saffron/10 text-saffron text-[10px] font-bold uppercase tracking-[0.3em] mb-12 border border-saffron/5"
           >
             <Sparkles size={12} />
-            The Divine Comic Series
+            Heritage & Itihas Series
           </motion.div>
 
           <motion.h1 
             variants={itemVariants}
             className="text-6xl md:text-9xl font-bold tracking-tighter text-earth mb-8 leading-[0.9] font-serif"
           >
-            Holy Stories <br /> 
-            <span className="italic font-normal text-saffron opacity-90 underline decoration-saffron/20 underline-offset-8">Drawn for Devotion.</span>
+            Sacred History <br /> 
+            <span className="italic font-normal text-saffron opacity-90 underline decoration-saffron/20 underline-offset-8">Drawn for the Next Gen.</span>
           </motion.h1>
 
           <motion.p 
             variants={itemVariants}
             className="max-w-xl mx-auto text-lg md:text-xl text-earth/60 leading-relaxed mb-16 font-medium italic"
           >
-            Experience timeless Bhakti wisdom through high-fidelity digital comics and hand-illustrated ebooks. Sacred storytelling, reimagined for the modern screen.
+            Introducing children to their heritage, ancient Indian history (Itihas), and timeless books. Sacred storytelling, reimagined for the modern screen.
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col items-center gap-8">
@@ -107,7 +108,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col gap-12 mb-20 text-center md:text-left">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-earth font-serif">
-              The <span className="italic font-normal text-saffron">Bhakti Collections.</span>
+              The <span className="italic font-normal text-saffron">Ancient Heritage Collections.</span>
             </h2>
             <div className="w-24 h-px bg-saffron/30 mx-auto md:mx-0" />
           </div>
@@ -163,6 +164,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Vision Section */}
+      <Vision />
+      
       {/* Compliance Information for Stripe Verification */}
       <section id="legal">
         <ComplianceSection />
