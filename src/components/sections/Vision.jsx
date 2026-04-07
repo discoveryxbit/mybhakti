@@ -5,12 +5,12 @@ import { Languages, Heart, Globe, Users } from "lucide-react";
 
 const languages = [
   { name: "English", code: "EN" },
-  { name: "Hindi (English)", code: "HI" },
-  { name: "Tamil (English)", code: "TA" },
-  { name: "Malayalam (English)", code: "ML" },
-  { name: "Kannada (English)", code: "KN" },
-  { name: "Marathi (English)", code: "MR" },
-  { name: "Bengali (English)", code: "BN" },
+  { name: "Hindi", code: "HI" },
+  { name: "Tamil", code: "TA" },
+  { name: "Malayalam", code: "ML" },
+  { name: "Kannada", code: "KN" },
+  { name: "Marathi", code: "MR" },
+  { name: "Bengali", code: "BN" },
 ];
 
 export default function Vision() {
