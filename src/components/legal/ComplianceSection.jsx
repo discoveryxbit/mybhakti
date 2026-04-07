@@ -34,7 +34,7 @@ export default function ComplianceSection() {
           {/* Business Info for Stripe Compliance */}
           <div className="lg:col-span-4 space-y-8">
             <div>
-              <h4 className="text-earth font-bold text-lg mb-4">Bhakti Comics</h4>
+              <img src="/logo.png" alt="Bhakti Comics Logo" className="h-20 w-auto mb-6" />
               <p className="text-foreground/60 text-sm leading-relaxed max-w-xs">
                 Spreading timeless spiritual wisdom through high-fidelity digital art and storytelling.
               </p>

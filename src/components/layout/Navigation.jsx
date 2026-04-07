@@ -18,8 +18,7 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 w-full z-50 glass-nav px-8 py-6 flex justify-between items-center">
       <Link href="/" className="flex items-center gap-3 group">
-        <BookOpen size={20} className="text-saffron group-hover:scale-110 transition-transform" />
-        <span className="font-bold text-earth text-lg tracking-tighter uppercase">Bhakti Comics</span>
+        <img src="/logo.png" alt="Bhakti Comics Logo" className="h-20 w-auto group-hover:scale-110 transition-transform" />
       </Link>
       
       <div className="hidden md:flex gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-earth/50">

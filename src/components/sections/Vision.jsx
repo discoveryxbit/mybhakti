@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { Languages, Heart, Globe, Users } from "lucide-react";
 
 const languages = [
+  { name: "English", code: "EN" },
   { name: "Hindi (English)", code: "HI" },
   { name: "Tamil (English)", code: "TA" },
   { name: "Malayalam (English)", code: "ML" },
   { name: "Kannada (English)", code: "KN" },
   { name: "Marathi (English)", code: "MR" },
+  { name: "Bengali (English)", code: "BN" },
 ];
 
 export default function Vision() {
@@ -79,7 +81,7 @@ export default function Vision() {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold uppercase tracking-widest text-earth mb-2">Mother Tongue</h4>
-                  <p className="text-xs text-earth/50 leading-relaxed">Breaking language barriers by launching in Hindi, Tamil, Malayalam, Kannada, and Marathi—all with English translations.</p>
+                  <p className="text-xs text-earth/50 leading-relaxed">Breaking language barriers by launching in Hindi, Tamil, Malayalam, Kannada, Marathi, English, Bengali along with other languages coming soon</p>
                 </div>
               </motion.div>
             </div>

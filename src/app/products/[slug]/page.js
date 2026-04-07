@@ -79,7 +79,7 @@ export default function ProductPage() {
 
             <div className="flex flex-col gap-8">
                <div className="p-8 rounded-[2rem] bg-surface border border-earth/5 shadow-premium max-w-sm">
-                  <BookOpen size={24} className="text-saffron mb-4" />
+                  <img src="/logo.png" alt="Logo" className="h-8 w-auto mb-4" />
                   <h3 className="font-bold text-earth mb-2">Waitlist Open</h3>
                   <p className="text-sm text-earth/40 leading-relaxed mb-6">Join 1,200+ devotees waiting for the high-definition launch.</p>
                   <button className="w-full bg-earth text-surface py-4 rounded-2xl font-bold text-sm hover:scale-[1.02] active:scale-95 transition-all outline-none">
