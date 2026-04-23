@@ -7,6 +7,31 @@ export const metadata = {
   title: "mybhakti | Simple spiritual wellness & meditation",
   description: "A simple and focused platform for your daily spiritual progress and inner peace.",
   keywords: ["Bhakti", "Meditation", "Spiritual", "Wellness", "Peace"],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    title: "mybhakti | Simple spiritual wellness & meditation",
+    description: "A simple and focused platform for your daily spiritual progress and inner peace.",
+    url: "https://mybhakti.com", // Adjust as per actual domain if known
+    siteName: "mybhakti",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "mybhakti | Simple spiritual wellness & meditation",
+    description: "A simple and focused platform for your daily spiritual progress and inner peace.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
