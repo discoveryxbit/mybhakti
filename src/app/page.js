@@ -1,5 +1,5 @@
 "use client";
-
+ 
 import { motion } from "framer-motion";
 import { Sparkles, ArrowDown, BookOpen, Send } from "lucide-react";
 import Link from "next/link";
@@ -7,8 +7,33 @@ import Navigation from "@/components/layout/Navigation";
 import Vision from "@/components/sections/Vision";
 import ComplianceSection from "@/components/legal/ComplianceSection";
 import Image from "next/image";
+import { useState } from "react";
+import { db } from "@/lib/firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+
 
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!email) return;
+    setStatus("loading");
+    
+    try {
+      await addDoc(collection(db, "mybhakti"), {
+        email: email,
+        timestamp: serverTimestamp(),
+      });
+      setStatus("success");
+      setEmail("");
+    } catch (error) {
+      console.error("Error subscribing:", error);
+      setStatus("error");
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -19,6 +44,7 @@ export default function Home() {
       },
     },
   };
+
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -74,16 +100,32 @@ export default function Home() {
           </motion.p>
 
           <motion.div variants={itemVariants} className="flex flex-col items-center gap-8">
-            <div className="relative group">
+            <form onSubmit={handleSubscribe} className="relative group">
               <input 
                 type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter email for early access"
+                required
+                disabled={status === "loading"}
                 className="w-80 px-8 py-5 rounded-3xl bg-surface border-2 border-accent/5 focus:border-saffron/20 transition-all outline-none text-earth font-medium"
               />
-              <button className="absolute right-2 top-2 p-3 bg-saffron text-white rounded-2xl shadow-lg shadow-saffron/10 hover:bg-earth transition-colors">
+              <button 
+                type="submit"
+                disabled={status === "loading"}
+                className="absolute right-2 top-2 p-3 bg-saffron text-white rounded-2xl shadow-lg shadow-saffron/10 hover:bg-earth transition-colors disabled:opacity-50"
+              >
                 <Send size={18} />
               </button>
-            </div>
+            </form>
+            
+            {status === "success" && (
+              <p className="text-sm text-saffron font-medium">Thank you! You're on the list.</p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-red-500 font-medium">Something went wrong. Try again.</p>
+            )}
+
             
             <div className="flex items-center gap-4 text-earth/30">
               <div className="w-12 h-px bg-current" />
