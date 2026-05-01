@@ -8,19 +8,20 @@ export const metadata = {
   description: "A simple and focused platform for your daily spiritual progress and inner peace.",
   keywords: ["Bhakti", "Meditation", "Spiritual", "Wellness", "Peace"],
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logoformeta.png",
+    apple: "/logoformeta.png",
+    shortcut: "/logoformeta.png",
   },
   openGraph: {
     title: "mybhakti | Simple spiritual wellness & meditation",
     description: "A simple and focused platform for your daily spiritual progress and inner peace.",
-    url: "https://mybhakti.com", // Adjust as per actual domain if known
+    url: "https://mybhakti.com",
     siteName: "mybhakti",
     images: [
       {
-        url: "/logo.png",
-        width: 800,
-        height: 600,
+        url: "/logoformeta.png",
+        width: 1200,
+        height: 630,
       },
     ],
     locale: "en_US",
@@ -30,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "mybhakti | Simple spiritual wellness & meditation",
     description: "A simple and focused platform for your daily spiritual progress and inner peace.",
-    images: ["/logo.png"],
+    images: ["/logoformeta.png"],
   },
 };
 
